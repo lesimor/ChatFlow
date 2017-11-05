@@ -56,7 +56,7 @@ def page_not_found(e):
 
 if __name__ == "__main__":
     # 미리 설정된 포트가 없으면 5000번 이용
-    port = os.getenv('PORT', '5000')
+    # port = os.getenv('PORT', '5000')
 
     # 플라스크 서버 실행
-    app.run(host='0.0.0.0', port=int(port))
+    app.run(host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080)))
