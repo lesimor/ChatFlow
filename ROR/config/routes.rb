@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  root :to => 'bot#index'
+  get 'keyboard' => 'bot#keyboard'
+  post 'message' => 'bot#get_message'
+  post 'friend' => 'bot#friend_add'
+  delete 'friend' => 'bot#friend_out'
+  delete 'chat_room/:user_key' => 'bot#chat_room_out'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
