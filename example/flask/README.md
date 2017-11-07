@@ -99,7 +99,7 @@ c9이 제공하는 클라우드 서버 서비스를 통해 별도의 개발환�
 
 ##### 4.1.5 동작 확인
 
-![](https://ws1.sinaimg.cn/large/006tKfTcgy1fl990lkjekj31kw0vudl4.jpg)
+![](https://ws4.sinaimg.cn/large/006tKfTcgy1fl9hc16d71j31kw0ufq78.jpg)
 
 **참고 사항**
 
