@@ -52,7 +52,7 @@ c9이 제공하는 클라우드 서버 서비스를 통해 별도의 개발환�
 
 ##### 4.1.2 Workspace 설정
 
-![](https://ws4.sinaimg.cn/large/006tKfTcgy1fl9g86hia5j31kw0rz46i.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fl9gmuqmz1j31kw0rz46i.jpg)
 
 ##### 참고 사항
 
@@ -75,9 +75,9 @@ c9이 제공하는 클라우드 서버 서비스를 통해 별도의 개발환�
 
 </br>
 
-##### 4.1.4 패키지 설치
+##### 4.1.4 패키지 설치 및 서버 실행
 
-![](https://ws1.sinaimg.cn/large/006tKfTcgy1fl9g9xjzgaj31kw0rtqag.jpg)
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fl9gohdmquj31kw0rtdo6.jpg)
 
 ##### 진행 순서
 
@@ -85,7 +85,7 @@ c9이 제공하는 클라우드 서버 서비스를 통해 별도의 개발환�
 
 2. bash의 현재 경로를 **Flask 프로젝트 디렉토리로 변경**합니다.
 
-   `cd /example/ROR` 입력
+   `cd /example/flask` 입력
 
 3. **패키치를 설치**합니다.
 
