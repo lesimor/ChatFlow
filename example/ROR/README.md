@@ -150,7 +150,7 @@ c9이 제공하는 클라우드 서버 서비스를 통해 별도의 개발환�
 
 ##### 참고 사항
 
-- **앱 URL**: [Step 4.1.3](https://github.com/lesimor/ChatFlow/tree/kakao-echobot/example/ROR#413-클라우드-서버의-도메인을-확인)에서 발급받은 도메인 입력
+- **앱 URL**: [Step 4.1.3](https://github.com/lesimor/ChatFlow/tree/kakao-echobot/example/ROR#413-클라우드-서버의-호스트명을-확인)에서 발급받은 도메인 입력
   - API 테스트 후 위 스크린샷 처럼 뜨면 정상적으로 동작하는 것입니다.
 
 </br>
