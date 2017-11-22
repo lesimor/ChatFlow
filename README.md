@@ -3,15 +3,20 @@
 
 ## 1. 이용에 대한 참고사항
 
-  1. **developer_id**와 **app_id**는 외부에 노출되지 않도록 주의해 주시기 바랍니다.
-  2. ChatFlow API를 이용해 옐로아이디/톡톡친구 챗봇을 구현한 프레임워크 별 예제 코드
-     - [Flask](https://github.com/lesimor/ChatFlow/tree/master/example/flask)
-     - [Ruby on Rails](https://github.com/lesimor/ChatFlow/tree/master/example/ROR)
+1. **developer_id**와 **app_id**는 외부에 노출되지 않도록 주의해 주시기 바랍니다.
 
+2. ChatFlow API를 이용해 옐로아이디/톡톡친구 챗봇을 구현한 프레임워크 별 예제 코드
+
+   - [Flask](https://github.com/lesimor/ChatFlow/tree/master/example/flask)
+   - [Ruby on Rails](https://github.com/lesimor/ChatFlow/tree/master/example/ROR)
+
+   <br/>
 ## 2. 개인정보 수집 및 이용에 대한 안내사항
 
-  1. 회원이 ChatFlow API 플랫폼 서비스를 이용하는 과정에서 이용자의 개인정보 수집이 필요한 경우, 이용자로부터 개인정보 수집 및 이용에 대한 명시적인 동의를 받아야 합니다.
-  2. ChatFlow는 '[개인정보 취급위탁 동의](https://center-pf.kakao.com/entrustment)'에 따라 안전하게 개인정보 처리 업무를 진행합니다.
+1. 회원이 ChatFlow API 플랫폼 서비스를 이용하는 과정에서 이용자의 개인정보 수집이 필요한 경우, 이용자로부터 개인정보 수집 및 이용에 대한 명시적인 동의를 받아야 합니다.
+2. ChatFlow는 '[개인정보 취급위탁 동의](https://center-pf.kakao.com/entrustment)'에 따라 안전하게 개인정보 처리 업무를 진행합니다.
+
+<br/>
 
 ## 3. 이용 시작하기
 #### 3.1. ChatFlow 가입
@@ -26,9 +31,9 @@ ChatFlow에서 API를 사용하기 위해서는 먼저 Client ID 발급을 위�
 #### 3.2. ChatFlow 상태관리 API 서비스 시작
 회원가입이 완료되어 서비스 가능한 상태가 되면, 다음 단계에 따라 서비스를 시작할 수 있습니다.
 
-  1. 챗봇 시나리오 API 사용 방법을
-  2. 여러 단계에 나누어
-  3. 서술한다
+1. 챗봇 시나리오 API 사용 방법을
+2. 여러 단계에 나누어
+3. 서술한다
 
 </br>
 
@@ -142,7 +147,10 @@ curl -XPOST 'https://chatflow.kr/api/v1/message' -d '{
 }
 ```
 
+</br>
+
 #### 5.2. 유저 상태 초기화
+
 - 서비스되는 애플리케이션에서 예외 상황이 발생한 경우 유저의 상태를 시나리오 상의 entry로 전이하는 API입니다.
 
 ##### Specification
@@ -169,7 +177,10 @@ curl -XPOST 'https://:your_server_url/friend' -d '{"user_key" : "HASHED_USER_KEY
 curl -XDELETE 'https://:your_server_url/friend/:user_key'
 ```
 
+</br>
+
 #### 5.3. 특정 노드로 상태 전이
+
 - 사용자가 채팅방 나가기를 해서 채팅방을 목록에서 삭제했을 경우 해당 정보를 파트너사 서버로 전달하는 API입니다.
 
 ##### Specification
@@ -186,140 +197,5 @@ curl -XDELETE 'https://:your_server_url/friend/:user_key'
 curl -XDELETE 'https://:your_server_url/chat_room/HASHED_USER_KEY'
 ```
 
-## 6. Object
+</br>
 
-##### 6.1. Keyboard
-
- - 응답 메시지에 따라 사용자의 키보드 영역에 표현될 메시지 입력방식에 대한 정보입니다.
- - 별도로 설정하지 않는 경우 text 타입이 기본으로 설정됩니다.
-
-| 필드명     | 타입            | 필수여부     | 설명                                       |
-| ------- | ------------- | -------- | ---------------------------------------- |
-| type    | String        | Required | buttons: 객관식 응답의 목록을 구성할 수 있음 <br/>text: 주관식 응답을 입력받을 수 있음 |
-| buttons | Array[String] | Optional | 객관식 응답 내용의 목록                            |
-
- - 직접 입력
-```
-{
-  "type": "text"
-}
-```
- - 버튼 입력
-
-```
-{
-  "type": "buttons",
-  "buttons": [
-    "선택 1",
-    "선택 2",
-    "선택 3"
-  ]
-}
-```
-
-
-##### 6.2. Message
-
- - 카카오톡 이용자가 명령어를 선택 혹은 입력했을 때 이용자에게 전송하는 응답 메시지입니다.
- - String, photo, MessageButton의 조합으로 이루어집니다.
- - 3가지 타입 중 1개 이상이 반드시 들어가야 하며, 최대 3가지 타입 모두 포함될 수 있습니다.
-
-| 필드명            | 타입                                       | 필수여부     | 설명                                       |
-| -------------- | ---------------------------------------- | -------- | ---------------------------------------- |
-| text           | String                                   | Optional | 사용자에게 발송될 메시지 텍스트(최대 1000자)              |
-| photo          | [Photo](https://github.com/plusfriend/auto_reply/blob/master/README.md#63-photo) | Optional | 말풍선에 들어갈 이미지 정보. 1장 제한, JPEG/PNG 포맷. 6.3에서 상세 기술 |
-| message_button | [MessageButton](https://github.com/plusfriend/auto_reply/blob/master/README.md#621-messagebutton) | Optional | 말풍선에 붙는 링크버튼 정보. 6.2.1에서 상세 기술           |
-
-```
-{
-  "text": "안녕하세요.",
-  "photo": {
-    "url": "https://hello.photo.src",
-    "width": 640,
-    "height": 480
-  },
-  "message_button": {
-    "label": "반갑습니다.",
-    "url": "http://hello.world.com/example"
-  }
-}
-```
-###### 6.2.1. MessageButton
-
- - 응답 메시지의 말풍선 하단에 보여지는 링크버튼 정보입니다.
-
-| 필드명   | 타입     | 필수여부     | 설명             |
-| ----- | ------ | -------- | -------------- |
-| label | String | Required | 링크버튼의 타이틀      |
-| url   | String | Required | 링크버튼의 연결 링크 주소 |
-
-```
-{
-  "label": "쿠폰확인하기",
-  "url": "http://coupon.coupon.com/~~"
-}
-```
-
-##### 6.3. Photo
-
- - 이미지 정보
-
-| 필드명    | 타입     | 필수여부     | 설명         |
-| ------ | ------ | -------- | ---------- |
-| url    | String | Required | 이미지 url    |
-| width  | Int    | Required | 이미지 width  |
-| height | Int    | Required | 이미지 height |
-
-> 이미지 권장 사이즈 : 720 x 630px  
-> 지원 파일형식 및 권장 용량 : jpg, png /500KB
-
-```
-{
-  "url": "https://photo.src",
-  "width": 640,
-  "height": 480
-}
-```
-
-## 7. Server information
-
-| host                   | port | comment          |
-| ---------------------- | ---- | ---------------- |
-| https://ybot.kakao.com | 443  | https api server |
-
-### 7.1. Proxy Server information
-카카오에서 파트너사 서버를 호출하는 경우 아래 3대의 proxy서버를 통하게 됩니다. 파트너사 방화벽 설정을 하게 될 경우 아래 3개의 IP에 대한 ACL을 허용해주시기 바랍니다.
-
-| IP             |
-| -------------- |
-| 110.76.143.234 |
-| 110.76.143.235 |
-| 110.76.143.236 |
-
-## 8. Response Code
-##### Success Response
-
-| http status code | code | message | comment |
-| ---------------- | ---- | ------- | ------- |
-| 200              | 0    | SUCCESS | 정상 응답   |
-
-##### Error Response
-
-| http status code | code | comment                       |
-| ---------------- | ---- | ----------------------------- |
-| 400              | 100  | bad request                   |
-| 400              | 201  | wrong api key                 |
-| 400              | 202  | wrong bot url                 |
-| 503              | 203  | wrong message format          |
-| 408              | 204  | request timeout               |
-| 408              | 204  | wrong keyboard initialization |
-| 400              | 301  | profile not found             |
-| 400              | 302  | user not found                |
-| 400              | 303  | not user friend               |
-| 400              | 400  | unsupported media type        |
-
-
-
-## 9. 질의응답
-상단의 issue를 통해서 문의주시길 바랍니다.
-- https://github.com/plusfriend/auto_reply/issues
