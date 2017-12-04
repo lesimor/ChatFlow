@@ -100,8 +100,8 @@ ChatFlow 관리 페이지에서도 테스트를 실행할 수 있습니다.
 | :------: | :--------------------------------------: | :------: | :--------------------------------------- |
 |    id    |                  String                  | Required | 챗봇 시나리오 상의 노드 ID, 관리자 페이지에서 확인 가능.       |
 |  action  |                  String                  | Required | 노드의 액션 타입, < intent\|select\|slot\|link\|custom > |
-| message  | [Message](https://github.com/plusfriend/auto_reply/blob/master/README.md#62-message) | Required | 자동응답 명령어에 대한 응답 메시지의 내용. 6.1에서 상세 기술     |
-| keyboard | [Keyboard](https://github.com/plusfriend/auto_reply#6-object) | Required | 키보드 영역에 표현될 명령어 버튼에 대한 정보. 생략시 text 타입(주관식 답변 키보드)이 선택된다. 6.2에서 상세 기술 |
+| message  | [Message](https://github.com/lesimor/ChatFlow#61-message) | Required | 자동응답 명령어에 대한 응답 메시지의 내용. 6.1에서 상세 기술     |
+| keyboard | [Keyboard](https://github.com/lesimor/ChatFlow#62-keyboard) | Required | 키보드 영역에 표현될 명령어 버튼에 대한 정보. 생략시 text 타입(주관식 답변 키보드)이 선택된다. 6.2에서 상세 기술 |
 |   slot   |                   Slot                   | Required | 대화를 진행하면서 축적된 정보, slot 노드를 거치면서 축적된다.    |
 - **예제**
 ```
@@ -166,8 +166,8 @@ ChatFlow 관리 페이지에서도 테스트를 실행할 수 있습니다.
 | :------: | :--------------------------------------: | :------: | :--------------------------------------- |
 |    id    |                  String                  | Required | 챗봇 시나리오 상의 노드 ID, 관리자 페이지에서 확인 가능.       |
 |  action  |                  String                  | Required | 노드의 액션 타입, < intent\|select\|slot\|link\|custom > |
-| message  | [Message](https://github.com/plusfriend/auto_reply/blob/master/README.md#62-message) | Required | 자동응답 명령어에 대한 응답 메시지의 내용. 6.2에서 상세 기술     |
-| keyboard | [Keyboard](https://github.com/plusfriend/auto_reply#6-object) | Required | 키보드 영역에 표현될 명령어 버튼에 대한 정보. 생략시 text 타입(주관식 답변 키보드)이 선택된다. 6.1에서 상세 기술 |
+| message  | [Message](https://github.com/lesimor/ChatFlow#61-message) | Required | 자동응답 명령어에 대한 응답 메시지의 내용. 6.2에서 상세 기술     |
+| keyboard | [Keyboard](https://github.com/lesimor/ChatFlow#62-keyboard) | Required | 키보드 영역에 표현될 명령어 버튼에 대한 정보. 생략시 text 타입(주관식 답변 키보드)이 선택된다. 6.1에서 상세 기술 |
 |   slot   |                   Slot                   | Required | 대화를 진행하면서 축적된 정보, slot 노드를 거치면서 축적된다.    |
 
 - **예제**
@@ -215,8 +215,8 @@ ChatFlow 관리 페이지에서도 테스트를 실행할 수 있습니다.
 | :------: | :--------------------------------------: | :------: | :--------------------------------------- |
 |    id    |                  String                  | Required | 챗봇 시나리오 상의 노드 ID, 관리자 페이지에서 확인 가능.       |
 |  action  |                  String                  | Required | 노드의 액션 타입, < intent\|select\|slot\|link\|custom > |
-| message  | [Message](https://github.com/plusfriend/auto_reply/blob/master/README.md#62-message) | Required | 자동응답 명령어에 대한 응답 메시지의 내용. 6.1에서 상세 기술     |
-| keyboard | [Keyboard](https://github.com/plusfriend/auto_reply#6-object) | Required | 키보드 영역에 표현될 명령어 버튼에 대한 정보. 생략시 text 타입(주관식 답변 키보드)이 선택된다. 6.2에서 상세 기술 |
+| message  | [Message](https://github.com/lesimor/ChatFlow#61-message) | Required | 자동응답 명령어에 대한 응답 메시지의 내용. 6.1에서 상세 기술     |
+| keyboard | [Keyboard](https://github.com/lesimor/ChatFlow#62-keyboard) | Required | 키보드 영역에 표현될 명령어 버튼에 대한 정보. 생략시 text 타입(주관식 답변 키보드)이 선택된다. 6.2에서 상세 기술 |
 |   slot   |                   Slot                   | Required | 대화를 진행하면서 축적된 정보, slot 노드를 거치면서 축적된다.    |
 
 - **예제**
@@ -249,7 +249,7 @@ ChatFlow 관리 페이지에서도 테스트를 실행할 수 있습니다.
 | 필드명   | 타입                                       | 필수여부     | 설명                                       |
 | ----- | ---------------------------------------- | -------- | ---------------------------------------- |
 | text  | String                                   | Optional | 사용자에게 발송될 메시지 텍스트                        |
-| photo | [Photo](https://github.com/plusfriend/auto_reply/blob/master/README.md#63-photo) | Optional | 말풍선에 들어갈 이미지 정보. 1장 제한, JPEG/PNG 포맷. 개발 진행중 |
+| image | [Image](https://github.com/lesimor/ChatFlow#63-image) | Optional | 말풍선에 들어갈 이미지 정보. 1장 제한, JPEG/PNG 포맷. 개발 진행중 |
 
 ```
 {
@@ -341,4 +341,4 @@ ChatFlow 관리 페이지에서도 테스트를 실행할 수 있습니다.
 
 ## 8. 질의응답
 상단의 issue를 통해서 문의주시길 바랍니다.
-- https://github.com/plusfriend/auto_reply/issues
+- https://github.com/lesimor/ChatFlow/issues
